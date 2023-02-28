@@ -1,6 +1,5 @@
 import 'package:bot/models/bot.dart';
 import 'package:bot/services/utils.dart';
-
 import '../models/player.dart';
 
 bool botsTurn(Player player, List<Bot> bot){

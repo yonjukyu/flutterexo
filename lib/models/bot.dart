@@ -1,26 +1,27 @@
 import 'package:bot/models/player.dart';
 
-class Bot{
-  int strength = 20;
-  int hp=100;
+import 'fighter.dart';
 
-  Bot(int st, int hps){
-    strength = st;
-    hp = hps;
-  }
-  void infos(){
-    print("strength: $strength hp: $hp");
-  }
+class Bot extends Fighter{
+  int _strength = 20;
+  int _hp=100;
 
-  void getHit(int damages){
-    hp -= damages;
-  }
+  Bot(int st, int hps):
+    super(st, hps);
 
   void hit(Player player, int damages){
     player.hp -= damages;
   }
 
-  void resurect(){
-    hp = 100;
+  int get strength => _strength;
+
+  set strength(int value) {
+    _strength = value;
+  }
+
+  int get hp => _hp;
+
+  set hp(int value) {
+    _hp = value;
   }
 }
